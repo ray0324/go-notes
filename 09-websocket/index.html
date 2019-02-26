@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Index</title>
+</head>
+<body>
+  <h1>Websocket</h1>
+  <script>
+    var ws = new WebSocket('ws://localhost:3000/v3/ws');
+      ws.addEventListener('message',function(e){
+        console.log(e)
+      })
+      ws.addEventListener('open',function(){
+        ws.send(JSON.stringify({user:'ray'}));
+      })
+  </script>
+</body>
+</html>

@@ -41,11 +41,11 @@ func main() {
 	fmt.Println(str)
 
 	// JSON 反序列化
-	var bookObject Book
-	err := json.Unmarshal([]byte(str), &bookObject)
+	var bookObj Book
+	err := json.Unmarshal([]byte(str), &bookObj)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(bookObject)
+	fmt.Println(bookObj)
 }
