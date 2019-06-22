@@ -16,12 +16,14 @@ import (
 
 var client *mongo.Client
 
+// Person 用户信息
 type Person struct {
 	ID        primitive.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
 	Firstname string             `json:"firstname,omitempty" bson:"firstname,omitempty"`
 	Lastname  string             `json:"lastname,omitempty" bson:"lastname,omitempty"`
 }
 
+// CreatePersonEndpoint 创建一个用户
 func CreatePersonEndpoint(res http.ResponseWriter, req *http.Request) {
 	res.Header().Add("content-type", "application/json")
 	var person Person
